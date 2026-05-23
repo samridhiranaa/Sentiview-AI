@@ -1,28 +1,74 @@
-# Python cache
+# =========================
+# Python Cache
+# =========================
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 
-# Virtual environment
+# =========================
+# Virtual Environments
+# =========================
 venv/
-.env/
+env/
+ENV/
+.venv/
 
-# Jupyter Notebook checkpoints
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Jupyter Notebook
+# =========================
 .ipynb_checkpoints/
 
-# OS files
+# =========================
+# IDE / Editor Settings
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS Files
+# =========================
 .DS_Store
 Thumbs.db
 
+# =========================
 # Logs
+# =========================
 *.log
 
-# Model files (optional - if large)
-*.pkl
+# =========================
+# Build / Distribution
+# =========================
+build/
+dist/
+*.egg-info/
 
-# VS Code
-.vscode/
+# =========================
+# Testing / Coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
 
-# PyCharm
-.idea/
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+
+
+# =========================
+# Dataset Files 
+# =========================
+data/*.csv
+
+# =========================
+# Mac/Linux Hidden Files
+# =========================
+*.swp
+*.swo

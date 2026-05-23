@@ -1,123 +1,204 @@
-# 🧠 Product Review Sentiment Analysis using NLP
+# Sentiview AI
 
-> A complete end-to-end Natural Language Processing (NLP) project that classifies product reviews into **Positive, Negative, and Neutral** sentiments using Machine Learning.
+### AI-Powered Sentiment Intelligence Platform
 
----
+Sentiview AI is an NLP and machine learning-powered platform designed to analyze customer reviews, classify sentiment, and generate meaningful insights from textual feedback in real time.
 
-## 📌 Overview
-
-With the rapid growth of e-commerce platforms, analyzing customer feedback manually has become impractical. This project automates sentiment classification of product reviews using NLP techniques and machine learning models.
-
-The system implements a full pipeline including:
-- Text preprocessing  
-- Feature extraction using TF-IDF  
-- Model training and evaluation  
-- Real-time prediction on unseen user input  
+Built using Python, Flask, and Scikit-learn, the platform combines natural language processing techniques with machine learning models to transform raw customer opinions into actionable sentiment analytics.
 
 ---
 
-## 🚀 Key Features
+# Features
 
-- 🔹 Text preprocessing (cleaning & normalization)
-- 🔹 TF-IDF feature extraction
-- 🔹 Multiple ML models:
-  - Naïve Bayes  
-  - Logistic Regression  
-  - Support Vector Machine (SVM)  
-- 🔹 Model evaluation using:
-  - Accuracy  
-  - Precision  
-  - Recall  
-  - F1 Score  
-- 🔹 Data visualization:
-  - Accuracy comparison graph  
-  - Confusion matrix heatmap  
-  - Sentiment distribution chart  
-- 🔹 Real-time sentiment prediction system (`test.py`)
+- Real-time sentiment prediction
+- NLP preprocessing pipeline
+- TF-IDF feature extraction
+- Machine learning-based sentiment classification
+- Interactive Flask web application
+- Sentiment confidence scoring
+- Review analytics and visualization
+- Modular and scalable architecture
 
 ---
 
-## 🧠 Tech Stack
+# Tech Stack
 
-- **Language:** Python  
-- **Libraries:** NLTK, Scikit-learn, Pandas, Matplotlib  
+## Languages & Frameworks
+- Python
+- Flask
+
+## Machine Learning & NLP
+- Scikit-learn
+- NLTK
+- TF-IDF Vectorization
+
+## Data Processing & Visualization
+- Pandas
+- NumPy
+- Matplotlib
 
 ---
 
-## ⚙️ Installation & Setup
+# Project Structure
 
-### 1. Clone the repository
-git clone https://github.com/your-username/Sentiment-Analysis-NLP.git
-cd Sentiment-Analysis-NLP
-
-### 2. Install dependencies
-pip install -r requitrements.txt
-
+```text
+Sentiview-AI/
+│
+├── app/
+│   ├── templates/
+│   │   └── index.html
+│   │
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   │
+│   │   ├── js/
+│   │   │   └── script.js
+│   │   │
+│   │   └── images/
+│   │
+│   └── app.py
+│
+├── models/
+│   ├── svm_model.pkl
+│   └── vectorizer.pkl
+│
+├── data/
+│   ├── raw_reviews.csv
+│   └── cleaned_reviews.csv
+│
+├── notebooks/
+│
+├── preprocessing.py
+├── train.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── LICENSE
+```
 
 ---
 
-## ▶️ How to Run
+# Machine Learning Pipeline
 
-### Step 1: Preprocess data
+The project follows a complete NLP workflow:
+
+1. Text preprocessing and cleaning
+2. Tokenization and normalization
+3. TF-IDF feature extraction
+4. Model training and evaluation
+5. Real-time sentiment prediction
+6. Sentiment analytics visualization
+
+---
+
+# Installation & Setup
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Sentiview-AI.git
+cd Sentiview-AI
+```
+
+---
+
+## 2. Create Virtual Environment (Optional)
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Mac/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Running the Project
+
+## Step 1 — Preprocess Dataset
+
+```bash
 python preprocessing.py
+```
 
-### Step 2: Train model
+## Step 2 — Train the Model
+
+```bash
 python train.py
+```
 
-### Step 3: Test on new input
-python test.py
+## Step 3 — Run the Flask Application
 
----
-
-## 📊 Results
-
-| Model | Accuracy |
-|------|--------|
-| Naïve Bayes | 1.00 |
-| Logistic Regression | 1.00 |
-| SVM | 1.00 |
-
-- Precision = 1.00  
-- Recall = 1.00  
-- F1 Score = 1.00  
+```bash
+python app/app.py
+```
 
 ---
 
-## 📈 Visualizations
-- Model Accuracy Comparison Graph  
-- Confusion Matrix Heatmap  
-- Sentiment Distribution Chart  
+# Current Capabilities
 
-(Add screenshots here)
+The platform currently supports:
 
----
-
-## 💻 Real-Time Prediction
-
-Example:
-
-Input: This product is amazing
-Output: Positive
-
-Input: Very bad experience
-Output: Negative
-
-Input: It's okay, nothing special
-Output: Neutral
-
+- Positive sentiment detection
+- Negative sentiment detection
+- Neutral sentiment detection
+- Real-time review analysis
+- NLP preprocessing
+- Machine learning-based classification
+- Basic analytics and visualization
 
 ---
 
-## ⚠️ Limitations
-- Small dataset (30 samples)
-- Model evaluated on full dataset (possible overfitting)
-- May not generalize well to real-world data
-- Cannot detect sarcasm or complex sentiment
+# Planned Features
+
+## UI & Dashboard Enhancements
+
+- Modern AI dashboard interface
+- Dark glassmorphism UI
+- Interactive charts and graphs
+- Prediction history panel
+- Animated sentiment indicators
+
+## Machine Learning Improvements
+
+- Larger and more diverse datasets
+- Realistic train/test evaluation
+- Multiple model benchmarking
+- Deep learning integration
+- BERT/LSTM implementation
+
+## Platform Features
+
+- CSV bulk review analysis
+- API support
+- Cloud deployment
+- Exportable analytics reports
+- User authentication system
 
 ---
 
-## 🔮 Future Improvements
-- Use larger and more diverse datasets
-- Apply deep learning models (LSTM, BERT)
-- Deploy as a web or mobile application
+# Future Vision
 
+Sentiview AI aims to evolve into a complete customer feedback intelligence platform capable of helping businesses understand customer behavior, emotional trends, and product perception through AI-driven sentiment analytics.
+
+---
+
+# License
+
+This project is licensed under the MIT License.

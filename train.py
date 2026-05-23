@@ -3,11 +3,18 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score
+import os
 
-with open("X_tfidf.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+x_tfidf_path = os.path.join(MODEL_DIR, "X_tfidf.pkl")
+with open(x_tfidf_path, "rb") as f:
     X = pickle.load(f)
 
-with open("y.pkl", "rb") as f:
+y_path = os.path.join(MODEL_DIR, "y.pkl")
+with open(y_path, "rb") as f:
     y = pickle.load(f)
 
 X_train, X_test = X, X
@@ -33,7 +40,8 @@ svm_acc = accuracy_score(y_test, svm_pred)
 
 import pickle
 
-with open("svm_model.pkl", "wb") as f:
+svm_model_path = os.path.join(MODEL_DIR, "svm_model.pkl")
+with open(svm_model_path, "wb") as f:
     pickle.dump(svm_model, f)
 
 print("\nSVM model saved successfully!")
@@ -95,7 +103,8 @@ plt.show()
 
 import pandas as pd
 
-df_vis = pd.read_csv("cleaned_reviews.csv")
+cleaned_reviews_path = os.path.join(DATA_DIR, "cleaned_reviews.csv")
+df_vis = pd.read_csv(cleaned_reviews_path)
 
 plt.figure()
 df_vis["Sentiment"].value_counts().plot(kind='bar')

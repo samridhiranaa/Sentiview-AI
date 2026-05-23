@@ -2,6 +2,7 @@ import pandas as pd
 import nltk
 import string
 import pickle
+import os
 
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -10,7 +11,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-df = pd.read_csv("product_reviews_dataset.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+raw_reviews_path = os.path.join(DATA_DIR, "raw_reviews.csv")
+df = pd.read_csv(raw_reviews_path)
 
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
@@ -39,15 +45,19 @@ y = df["Sentiment"]
 
 print("\nTF-IDF Shape:", X_tfidf.shape)
 
-df.to_csv("cleaned_reviews.csv", index=False)
+cleaned_reviews_path = os.path.join(DATA_DIR, "cleaned_reviews.csv")
+df.to_csv(cleaned_reviews_path, index=False)
 
-with open("X_tfidf.pkl", "wb") as f:
+x_tfidf_path = os.path.join(MODEL_DIR, "X_tfidf.pkl")
+with open(x_tfidf_path, "wb") as f:
     pickle.dump(X_tfidf, f)
 
-with open("y.pkl", "wb") as f:
+y_path = os.path.join(MODEL_DIR, "y.pkl")
+with open(y_path, "wb") as f:
     pickle.dump(y, f)
 
-with open("vectorizer.pkl", "wb") as f:
+vectorizer_path = os.path.join(MODEL_DIR, "vectorizer.pkl")
+with open(vectorizer_path, "wb") as f:
     pickle.dump(vectorizer, f)
 
 print("\nAll files saved successfully!")
